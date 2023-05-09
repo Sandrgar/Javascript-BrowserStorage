@@ -1,0 +1,38 @@
+<html>
+
+<body>
+  <div id="container" style="display: flex; align-items: center;">
+
+  </div>
+</body>
+
+</html>
+
+<script>
+  async function fetchId() {
+    try {
+      const res = await fetch(`https://jsonplaceholder.typicode.com/todos`);
+      const data = await res.json();
+
+      
+
+      data.forEach(element => {
+        const x = document.querySelector("#container")
+        const ul = document.createElement("ul")
+        const li = document.createElement("li")
+        x.appendChild(ul)
+        ul.appendChild(li)
+        li.innerText= element.title
+
+      }
+      )
+    } catch {
+      console.log("error")
+    }
+  }
+  fetchId()
+
+  
+
+
+</script>
